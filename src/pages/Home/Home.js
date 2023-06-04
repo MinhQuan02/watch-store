@@ -115,7 +115,7 @@ function Home() {
             <div className={cx('product-preview')}>
                 <h1 className={cx('product-title')}>Our Product</h1>
                 <div className={cx('product-content')}>
-                    <ProductPreview data={product_item} />
+                    <ProductPreview dataProduct={product_item} />
                 </div>
             </div>
         </div>

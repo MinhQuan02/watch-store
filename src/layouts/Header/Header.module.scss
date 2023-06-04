@@ -8,7 +8,9 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-background);
-
+    position: sticky;
+    top: 0;
+    z-index: 11;
 }
 
 .logo {

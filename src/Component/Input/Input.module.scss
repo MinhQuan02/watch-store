@@ -1,0 +1,92 @@
+.input-item {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    padding: 15px 0;
+
+    .input {
+        width: 95%;
+        height: 30px;
+        font-size: 1.6rem;
+        padding: 5px 10px;
+        outline: none;
+        border-radius: 2px;
+        border: 1px solid rgba(22, 24, 35, 0.5);
+
+        &:not(:placeholder-shown)~.description-input,
+        &:focus~.description-input {
+            color: var(--primary-background);
+            top: -20px;
+            text-transform: uppercase;
+            left: -10px;
+        }
+
+        &:not(:placeholder-shown),
+        &:focus {
+            border: 1px solid var(--primary-background);
+        }
+
+    }
+
+    .description-input {
+        position: absolute;
+        left: 0;
+        top: 15px;
+        font-size: 1.6rem;
+        padding: 12px;
+        pointer-events: none;
+        transition: all 0.1s ease-in-out;
+        color: rgba(22, 24, 35, 0.3);
+    }
+}
+
+
+.input-error {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    padding: 15px 0;
+
+    .input {
+        width: 95%;
+        height: 30px;
+        font-size: 1.6rem;
+        padding: 5px 10px;
+        outline: none;
+        border-radius: 2px;
+        border: 1px solid red;
+
+        &:not(:placeholder-shown)~.description-input,
+        &:focus~.description-input {
+            color: red;
+            top: -20px;
+            text-transform: uppercase;
+            left: -10px;
+        }
+
+        &:not(:placeholder-shown),
+        &:focus {
+            border: 1px solid red;
+        }
+
+    }
+
+    .description-input {
+        position: absolute;
+        left: 0;
+        top: 15px;
+        font-size: 1.6rem;
+        padding: 12px;
+        pointer-events: none;
+        transition: all 0.1s ease-in-out;
+        color: rgba(22, 24, 35, 0.3);
+    }
+
+    .error-message {
+        font-size: 0.8em;
+        color: red;
+        position: absolute;
+        right: 10px;
+        top: 0;
+    }
+}

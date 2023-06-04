@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
-function ProductPreview({ data }) {
+function ProductPreview({ dataProduct }) {
     return (
         <div className={cx('list-product')}>
-            {data.map((pro, index) => {
+            {dataProduct.map((pro, index) => {
                 return (
                     <div className={cx('box')} key={pro.id}>
                         <div className={cx('box-img')}>
@@ -36,7 +36,7 @@ function ProductPreview({ data }) {
 }
 
 ProductPreview.propTypes = {
-    data: PropTypes.node.isRequired,
+    dataProduct: PropTypes.object.isRequired,
 };
 
 export default ProductPreview;

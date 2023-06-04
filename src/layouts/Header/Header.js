@@ -2,15 +2,33 @@ import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import Image from '~/assets/images/logo.png';
-import Button from '~/Component/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faRegistered } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 function Header() {
     const [show, setShow] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseOver = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
+    // update menu later
+
+    // useEffect(() => {
+    //     if (!show && !isHovered) {
+    //         setTimeout(() => {
+    //             setShow(true);
+    //         }, 5000);
+    //     }
+    // }, [isHovered]);
 
     const handleMenu = () => {
         setShow(show ? false : true);
@@ -81,24 +99,24 @@ function Header() {
                     <span onClick={handleMenu}>
                         <FontAwesomeIcon icon={faBars} />
                     </span>
-                    <div className={cx('box-menu')}>
+                    <div className={cx('box-menu')} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
                         <ul>
-                            <Link to="/login">
+                            <Link onClick={handleMenu} to="/login">
                                 <li>Login</li>
                             </Link>
                         </ul>
                         <ul>
-                            <Link to="/register">
+                            <Link onClick={handleMenu} to="/register">
                                 <li>Register Account</li>
                             </Link>
                         </ul>
                         <ul>
-                            <Link to="/settings">
+                            <Link onClick={handleMenu} to="/settings">
                                 <li>Settings</li>
                             </Link>
                         </ul>
                         <ul>
-                            <Link to="/forget-password">
+                            <Link onClick={handleMenu} to="/forget-password">
                                 <li>Forget Password</li>
                             </Link>
                         </ul>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
-function Button({ children, outline = false, primary = false, icon, className, ...props }) {
+function Button({ children, outline = false, icon, className, ...props }) {
     return (
         <button className={cx('wrapper-btn')}>
             {children}
@@ -16,7 +16,6 @@ function Button({ children, outline = false, primary = false, icon, className, .
 Button.propTypes = {
     children: PropTypes.node.isRequired,
     outline: PropTypes.bool,
-    primary: PropTypes.bool,
     icon: PropTypes.node,
 };
 
